@@ -124,18 +124,17 @@ void fill_csv(ofstream& csv, const vector<Mat> img, const vector<int> lbl)  {
 	if(csv) {		// let's fill this shit baby
 
 		int n = img.size();
-    int SZ;
+    		int SZ;
 		for(int i = 0 ; i < n ; i++) {
-      SZ = img[i].rows*img[i].cols;
-     // cout << SZ << endl ;
-			for(int j = 0; j < SZ ; j++){
+     			 SZ = img[i].rows*img[i].cols;
+     			// cout << SZ << endl ;
+				for(int j = 0; j < SZ ; j++){
         //for(int k = 0; k < img[i].rows ; k++){ 
-            if (img[i].at<int>(j) == 0) {csv << img[i].at<int>(j) << ",";}
-            else {csv << 1 << ",";}   // it is the only way that works ........ else we get values like 26564216584
+           				 if (img[i].at<int>(j) == 0) {csv << img[i].at<int>(j) << ",";}
+           				 else {csv << 1 << ",";}   // it is the only way that works ........ else we get values like 26564216584
           //}
-
-        }	
-			   csv << lbl[i] << endl;	// then the label which tells wether there is an (or several) error or not	(1 = error, 0 = clean)
+       					}	
+			   	csv << lbl[i] << endl;	// then the label which tells wether there is an (or several) error or not	(1 = error, 0 = clean)
 			   //cout << i << endl;
 
 		  
